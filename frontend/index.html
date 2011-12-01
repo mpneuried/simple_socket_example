@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="Team Centric Software GmbH, TCS">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script src="http://documentcloud.github.com/underscore/underscore.js"></script>
+
+  <script src="http://localhost:8015/socket.io/socket.io.js"></script>
+
+  <script src="http://localhost:8000/sockettest.js"></script>
+
+  <style>
+    #container{
+      padding-top: 40px;
+    }
+    .box{
+      background-color: #FEFBF3;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      padding: 9px;
+      margin: 5px 0;
+    }
+    ul.chat, ul.chat li{
+      list-style: none;
+      margin:0;
+      padding:0;
+    }
+  </style>
+
+</head>
+<body>
+
+<div data-dropdown="dropdown" class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <div class="container">
+      <a href="#" class="brand">Socket.IO TEST</a>
+    </div>
+  </div>
+</div>
+<div class="container" id="container">
+  <section>
+    <div class="row">
+      <div class="span-one-third">
+        <h3>ROOM A</h3>
+        <button id="" class="sub_room btn primary" data-roomname="roomA">start</button>
+        <div class="box" id="box_roomA" style="display:none;">
+          <h4>chat</h4>
+          <input type ="text" id="user_roomA" data-roomname="roomA">
+          <input type ="text" id="text_roomA" data-roomname="roomA">
+          <button id="send_roomA" class="send_room btn" data-roomname="roomA">start</button>
+        </div>
+        <ul class="chat" id="out_roomA"></ul>
+      </div>
+      <div class="span-one-third">
+        <h3>ROOM B</h3>
+        <button id="" class="sub_room btn primary" data-roomname="roomB">start</button>
+        <div class="box" id="box_roomB" style="display:none;">
+          <h4>chat</h4>
+          <input type ="text" id="user_roomB" data-roomname="roomB">
+          <input type ="text" id="text_roomB" data-roomname="roomB">
+          <button id="send_roomB" class="send_room btn" data-roomname="roomB">start</button>
+        </div>
+        <ul class="chat" id="out_roomB"></ul>
+      </div>
+      <div class="span-one-third"></div>
+    </div>
+  </section>
+</div>
+
+</body>
